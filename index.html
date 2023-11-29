@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DCC202 - Atividade 12: Victor Wingert de Almeida</title>
+    <script src="./main.js" type="module"></script>
+    <style>
+        input:invalid{
+            border: 1px solid red;
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    
+    <main>
+        <h1>DCC202 - Atividade 12: Victor Wingert de Almeida</h1>
+        <p>Esta é a página principal que usa JavaScript para adicionar iteração.</p>
+        <section>
+            <form name="entrada">
+                <input type="number" name="quantidade" value="5" min="0" max="12">
+                <fieldset>
+                    <legend>Origem</legend>
+                    <label>Maria
+                        <input type="radio" name="origem" value="maria" checked>
+                    </label>
+                    <label>Joao
+                        <input type="radio" name="origem" value="joao">
+                    </label>
+                </fieldset>
+                <select name="fruta">
+                    <option value="maca">Maçã</option>
+                    <option value="pera">Pera</option>
+                    <option value="banana">Banana</option>
+                </select>
+                <button type="submit" name="enviar">Enviar</button>
+            </form>
+        </section>
+        <section></section>
+    </main>
 </body>
 </html>
