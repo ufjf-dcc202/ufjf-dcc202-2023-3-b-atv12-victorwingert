@@ -1,11 +1,9 @@
 let estoque = {
     'joao': [
-        {'tipo': 'maca', 'qtd': 1},
-        {'tipo': 'pera', 'qtd': 2}
+        {'tipo': 'maca', 'qtd': 1}
     ],
     'maria': [
-        {'tipo': 'maca', 'qtd': 1},
-        {'tipo': 'banana', 'qtd': 4}
+        {'tipo': 'maca', 'qtd': 2}
     ]
 };
 
@@ -36,9 +34,26 @@ function transacaoNoEstoque(origem, destino, tipo, quantidade) {
         }
     }
     if(!monteOrigem) { return; }
+
+    let monteDestino;
+    for(let i = 0; i < pessoaDestino.length; i++){
+        const monte = pessoaDestino[i];
+        if(monte.tipo === tipo){
+            monteDestino = monte;
+            break;
+        }
+    }
+    if(!monteDestino) { 
+        monteDestino = {'tipo': tipo, 'qtd': 0};
+        pessoaDestino.push(monteDestino);
+    }
+    const qtdReal = Math.min(quantidade, monteOrigem.qtd);
+    monteDestino.qtd += qtdReal;
+    monteOrigem.qtd -= qtdReal;
 }
 
 function limpaEstoque() {
+    estoque = {};
     return limpaEstoque;
 }
 
